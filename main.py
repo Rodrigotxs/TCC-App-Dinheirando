@@ -4,6 +4,10 @@ import psycopg
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return ("Dinheirando!")
+
 @app.get("/user")
 def read_user():
     user_resposta = []
