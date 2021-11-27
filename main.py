@@ -1,6 +1,6 @@
 # Importando biblitecas
 from fastapi import FastAPI
-import psycopg
+import psycopg2
 
 app = FastAPI()
 
@@ -12,7 +12,7 @@ def home():
 def read_user():
     user_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -35,7 +35,7 @@ def read_user():
 def read_perfil():
     perfil_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -62,7 +62,7 @@ def read_perfil():
 def read_progresso():
     progresso_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -86,7 +86,7 @@ def read_progresso():
 def read_forum():
     forum_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -109,7 +109,7 @@ def read_forum():
 def read_post():
     post_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -134,7 +134,7 @@ def read_post():
 def read_cursos():
     cursos_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -157,7 +157,7 @@ def read_cursos():
 def read_rank():
     rank_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -180,7 +180,7 @@ def read_rank():
 def read_midias():
     midias_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -202,7 +202,7 @@ def read_midias():
 def read_questionario():
     questionario_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -227,7 +227,7 @@ def read_questionario():
 @app.post("/createUser")
 def write_user():
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg2.connect("dbname=postgres user=postgres password=postgree ") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
