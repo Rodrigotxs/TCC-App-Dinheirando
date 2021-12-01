@@ -3,6 +3,7 @@ from fastapi import FastAPI
 import psycopg
 
 app = FastAPI()
+DATA_BASE_CONNECT = "host=ec2-44-193-111-218.compute-1.amazonaws.com dbname=dbmu38rmc5su92 user=omsisprosblwpg password=a100ad21e0e6f3aacfaeba408db87bd2b21adb0ed14ae7ee8d354b41c13418c5"
 
 @app.get("/")
 def home():
@@ -12,7 +13,7 @@ def home():
 def read_user():
     user_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("host=ec2-44-193-111-218.compute-1.amazonaws.com dbname=dbmu38rmc5su92 user=omsisprosblwpg password=a100ad21e0e6f3aacfaeba408db87bd2b21adb0ed14ae7ee8d354b41c13418c5") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -35,7 +36,7 @@ def read_user():
 def read_perfil():
     perfil_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -62,7 +63,7 @@ def read_perfil():
 def read_progresso():
     progresso_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -86,7 +87,7 @@ def read_progresso():
 def read_forum():
     forum_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -109,7 +110,7 @@ def read_forum():
 def read_post():
     post_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -134,7 +135,7 @@ def read_post():
 def read_cursos():
     cursos_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -157,7 +158,7 @@ def read_cursos():
 def read_rank():
     rank_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -180,7 +181,7 @@ def read_rank():
 def read_midias():
     midias_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -202,7 +203,7 @@ def read_midias():
 def read_questionario():
     questionario_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -227,7 +228,7 @@ def read_questionario():
 @app.post("/createUser")
 def write_user():
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect(DATA_BASE_CONNECT) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
