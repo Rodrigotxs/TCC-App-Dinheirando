@@ -1,6 +1,7 @@
 # Importando biblitecas
 from fastapi import FastAPI
 import psycopg
+import os
 
 app = FastAPI()
 
@@ -12,7 +13,7 @@ def home():
 def read_user():
     user_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=dbmu38rmc5su92 user=omsisprosblwpg password=a100ad21e0e6f3aacfaeba408db87bd2b21adb0ed14ae7ee8d354b41c13418c5") as conn:
+    with psycopg.connect(os.environ.get("DATABASE_URL")) as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
