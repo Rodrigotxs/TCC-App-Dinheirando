@@ -12,7 +12,7 @@ def home():
 def read_user():
     user_resposta = []
         # Conectando no Banco de Dados
-    with psycopg.connect("dbname=postgres user=postgres password=postgree ") as conn:
+    with psycopg.connect("dbname=dbmu38rmc5su92 user=omsisprosblwpg password=a100ad21e0e6f3aacfaeba408db87bd2b21adb0ed14ae7ee8d354b41c13418c5") as conn:
 
         # Cursor to perform database operations
         with conn.cursor() as cur:
@@ -232,7 +232,7 @@ def write_user():
         # Cursor to perform database operations
         with conn.cursor() as cur:
             # Enviando dados para a tabela users                
-            cur.execute("""INSERT INTO users (username, email, password) VALUES (%s, %s,%s);""",("Lucas", "lucas@tcc.com.br","123456"))                      
+            cur.execute("""INSERT INTO users (username, email, password) VALUES (%s, %s,%s);""",("Caio", "caio@tcc.com.br","321456"))                      
             # Make the changes to the database persistent
             conn.commit()
     return {"Status": "OK"}
